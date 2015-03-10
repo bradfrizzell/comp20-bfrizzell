@@ -8,7 +8,11 @@ function parse(){
 	if (myRequest.readyState == 4 && myRequest.status == 200) {
 	    jsonData = JSON.parse(myRequest.responseText);
 	    for(message in jsonData) {
-		phrase= message.content +" "+ message.username;				
+		console.log(message);
+		console.log(message.content);
+		console.log(message.username);
+		phrase= message.content +" "+ message.username;	
+		console.log(phrase);
 		messages.innerHTML = messages.innerHTML+ '</br>' + phrase;
 	    }
 	}

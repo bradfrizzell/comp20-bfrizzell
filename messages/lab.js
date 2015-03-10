@@ -1,6 +1,6 @@
 function parse(){
     myRequest = new XMLHttpRequest();
-    myRequest.open("get", "http://messagehub.herokuapp.com/messages.json", true);
+    myRequest.open("get", "data.json", true);
     myRequest.onreadystatechange = writeMessageCallback;
     myRequest.send();
     function writeMessageCallback() {

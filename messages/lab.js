@@ -7,12 +7,8 @@ function parse(){
 	messages = document.getElementById("messages");
 	if (myRequest.readyState == 4 && myRequest.status == 200) {
 	    jsonData = JSON.parse(myRequest.responseText);
-	    for(message in jsonData) {
-		console.log(message);
-		console.log(message.content);
-		console.log(message.username);
-		phrase= message.content +" "+ message.username;	
-		console.log(phrase);
+	    for(int i=0; i<jsonData.length; i++) {
+		phrase= jsonData[i].content +" "+ jsonData[i].username;	
 		messages.innerHTML = messages.innerHTML+ '</br>' + phrase;
 	    }
 	}

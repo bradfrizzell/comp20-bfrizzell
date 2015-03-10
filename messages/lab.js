@@ -8,8 +8,8 @@ function parse(){
 	if (myRequest.readyState == 4 && myRequest.status == 200) {
 	    jsonData = JSON.parse(myRequest.responseText);
 	    for(i=0; i<jsonData.length; i++) {
-		phrase= jsonData[i].content +" "+ jsonData[i].username;	
-		messages.innerHTML = messages.innerHTML+ '</br>' + phrase;
+		message = jsonData[i].content +" "+ jsonData[i].username;	
+		messages.innerHTML = messages.innerHTML+ '</br>' + message;
 	    }
 	}
     }

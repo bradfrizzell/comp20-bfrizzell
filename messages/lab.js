@@ -6,10 +6,9 @@ function parse(){
     function writeMessageCallback() {
 	messages = document.getElementById("messages");
 	if (myRequest.readyState == 4 && myRequest.status == 200) {
-	    data = JSON.parse(myRequest.responseText);
-	    console.log(data.length);
-	    for(i=0;i<data.length;i++) {
-		phrase= data[i].content +" "+ data[i].username;				
+	    jsonData = JSON.parse(myRequest.responseText);
+	    for(message in jsonData) {
+		phrase= message.content +" "+ message.username;				
 		messages.innerHTML = messages.innerHTML+ '</br>' + phrase;
 	    }
 	}

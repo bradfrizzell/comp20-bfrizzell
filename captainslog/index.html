@@ -6,7 +6,19 @@
 	<title>Captain's Log</title>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<script>
-	  // Most of your work will be done here...
+	  $(document).ready(function(){
+		$("#msg").change(
+			function highlight()
+			{
+
+			    
+			    
+				text = $("#msg").val();         
+				$("#msg").val("");
+				console.log(text);
+				$("#log").prepend('<p>'+text+"</p>")
+			});
+	});
 	</script>
 </head>
 

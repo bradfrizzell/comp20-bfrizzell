@@ -7,16 +7,23 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<script>
 	  $(document).ready(function(){
+	  			storedEntries = localStorage.getItem('entries');
+			    entries = JSON.parse(storedEntries);
+			    
+			    for (i=0; i<entries.length; i++){
+			        $("#log").prepend('<p>'+entries[i]+"</p>");
+			    }
 		$("#msg").change(
 			function highlight()
-			{
-
-			    
-			    
+			{	
+			    date = new Date();		    			    
 				text = $("#msg").val();         
 				$("#msg").val("");
-				console.log(text);
-				$("#log").prepend('<p>'+text+"</p>")
+				$("#log").prepend('<p>'+date+" - "+text+"</p>")
+				
+				if(entries){length = entries.length; entries[length] = (date+" - "+text);}
+				else {entries = [(date+text)];}
+			    localStorage.setItem('entries', JSON.stringify(entries));
 			});
 	});
 	</script>
@@ -26,5 +33,6 @@
 	<h1>Captain's Log</h1>
 	<h3>New entry: <input type="text" id="msg" name="msg" size="30" /></h3>
 	<div id="log"></div>
+	
 </body>
 </html>

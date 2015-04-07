@@ -9,9 +9,10 @@
 	  $(document).ready(function(){
 	  			storedEntries = localStorage.getItem('entries');
 			    entries = JSON.parse(storedEntries);
-			    
-			    for (i=0; i<entries.length; i++){
-			        $("#log").prepend('<p>'+entries[i]+"</p>");
+			    if(entries.length){
+			        for (i=0; i<entries.length; i++){
+			            $("#log").prepend('<p>'+entries[i]+"</p>");
+			        }
 			    }
 		$("#msg").change(
 			function highlight()

@@ -1,0 +1,27 @@
+body {
+    background-color: lightyellow;
+    margin-left: 20px;
+    font-family: Sans-Serif;
+    width : 800px;
+}
+
+h1 {
+    color: navy;
+}
+
+p {
+    }
+
+h3 {
+    margin-left:10px;
+}
+
+.issue{
+    margin-left: 30px;
+
+}
+
+img{
+    width: 600 px;
+
+}

@@ -68,7 +68,7 @@ function get_location(){
 	});
 	params = ("login=CameronGregory&lat=" + myLat + "&lng=" + myLng); 
 	myRequest = new XMLHttpRequest();
-	myRequest.open("POST", "https://secret-about-box.herokuapp.com/sendLocation", true);
+	myRequest.open("POST", "https://powerful-spire-5717.herokuapp.com/sendLocation", true);
 	myRequest.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 	myRequest.onreadystatechange = parseResponseCallback;
 	myRequest.send(params);
